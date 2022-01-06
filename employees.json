@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "hassnaa",
+      "job_title": "developer",
+      "state": "active"
+    },
+    {
+      "id": "2",
+      "name": "mohamed",
+      "job_title": "developer",
+      "state": "approved"
+    }
+  ]
+}
