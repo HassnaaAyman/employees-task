@@ -4,13 +4,59 @@
       "id": "1",
       "name": "hassnaa",
       "job_title": "developer",
-      "state": "active"
+      "age": 27,
+      "states": [
+        {
+          "id": 0,
+          "type": "ACTIVE"
+        },
+        {
+          "id": 1,
+          "type": "INACTIVE"
+        },
+        {
+          "id": 2,
+          "type": "APPROVED"
+        },
+        {
+          "id": 3,
+          "type": "IN_CHECK"
+        },
+        {
+          "id": 4,
+          "type": "ADDED"
+        }
+      ],
+      "current_state": "ACTIVE"
     },
     {
       "id": "2",
       "name": "mohamed",
       "job_title": "developer",
-      "state": "approved"
+      "age": 27,
+      "states": [
+        {
+          "id": 5,
+          "type": "ACTIVE"
+        },
+        {
+          "id": 6,
+          "type": "INACTIVE"
+        },
+        {
+          "id": 7,
+          "type": "APPROVED"
+        },
+        {
+          "id": 8,
+          "type": "IN_CHECK"
+        },
+        {
+          "id": 9,
+          "type": "ADDED"
+        }
+      ],
+      "current_state": "INACTIVE"
     }
   ]
 }
