@@ -1,13 +1,12 @@
 /** @format */
 
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { notification, Table } from 'antd';
+import { Button, notification } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
-const API_BASE_URL = 'http://localhost:3000';
+import { API_BASE_URL } from '../api/config';
+import { StyledButton, StyledTable, Container } from '../style';
 
 type IState = {
   id: number;
@@ -82,7 +81,7 @@ const Employees = () => {
       render: (state, record: any) =>
         state.map((element: { type: string; id: number }) => {
           return (
-            <StyledSteps
+            <StyledButton
               key={element.id}
               value={element.id}
               onClick={() => handleOnClick(element, record.id)}
@@ -92,7 +91,7 @@ const Employees = () => {
                   : current.includes(element.id)
               }>
               {element.type}
-            </StyledSteps>
+            </StyledButton>
           );
         }),
     },
@@ -104,7 +103,6 @@ const Employees = () => {
       <Button onClick={() => navigate('/employees/create')}>
         Create Employee
       </Button>
-
       <StyledTable
         rowKey='id'
         columns={columns}
@@ -116,38 +114,3 @@ const Employees = () => {
 };
 
 export default Employees;
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  width: 90%;
-  align-items: center;
-  margin: 50px auto;
-`;
-
-export const Button = styled.button`
-  background-color: white;
-  color: black;
-  width: 150px;
-  height: 40px;
-  border: 1px solid #000;
-  border-radius: 4px;
-  cursor: pointer;
-`;
-
-export const StyledTable = styled(Table)`
-  margin-top: 30px;
-  &.ant-table-wrapper {
-    width: 100%;
-  }
-`;
-
-export const StyledSteps: any = styled.button`
-  background-color: ${(props) => props.className && '#40a4ff'};
-  color: ${(props) => props.className && 'white'};
-  margin-left: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-`;

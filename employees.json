@@ -56,7 +56,7 @@
           "type": "ADDED"
         }
       ],
-      "current_state": "INACTIVE"
+      "current_state": "IN_CHECK"
     },
     {
       "name": "aya",

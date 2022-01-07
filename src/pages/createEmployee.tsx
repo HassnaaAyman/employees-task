@@ -1,13 +1,12 @@
 /** @format */
 
-import { Form, Input, Select, Button, notification, InputNumber } from 'antd';
-import axios from 'axios';
-import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { Form, Input, Select, Button, notification, InputNumber } from 'antd';
+import { API_BASE_URL } from '../api/config';
+import { Container, StyledForm } from '../style';
 
-const API_BASE_URL = 'http://localhost:3000';
-
-const states = [
+const selectInputValues = [
   { label: 'ADDED', value: 'ADDED' },
   { label: 'APPROVED', value: 'APPROVED' },
   { label: 'ACTIVE', value: 'ACTIVE' },
@@ -38,10 +37,6 @@ const fixedtSates = [
   },
 ];
 
-const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
-};
-
 const CreateEmployee = () => {
   const navigate = useNavigate();
 
@@ -65,10 +60,6 @@ const CreateEmployee = () => {
       });
   };
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-  };
-
   const handleChange = () => {
     form.setFieldsValue({ sights: [] });
   };
@@ -76,6 +67,7 @@ const CreateEmployee = () => {
   const onReset = () => {
     form.resetFields();
   };
+
   return (
     <Container>
       <h1>Add New Employee</h1>
@@ -85,9 +77,7 @@ const CreateEmployee = () => {
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 14 }}
         initialValues={{ remember: true }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete='off'>
+        onFinish={onFinish}>
         <Form.Item
           label='Name'
           name='name'
@@ -113,7 +103,7 @@ const CreateEmployee = () => {
           name='current_state'
           label='State'
           rules={[{ required: true, message: 'Missing state' }]}>
-          <Select options={states} onChange={handleChange} />
+          <Select options={selectInputValues} onChange={handleChange} />
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
@@ -130,17 +120,3 @@ const CreateEmployee = () => {
 };
 
 export default CreateEmployee;
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  width: 90%;
-  align-items: center;
-  margin: 50px auto;
-`;
-
-export const StyledForm = styled(Form)`
-  width: 50%;
-  margin-top: 30px;
-`;
