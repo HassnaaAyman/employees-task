@@ -57,6 +57,64 @@
         }
       ],
       "current_state": "INACTIVE"
+    },
+    {
+      "name": "aya",
+      "age": "23",
+      "job_title": "ay7aga",
+      "current_state": "ACTIVE",
+      "states": [
+        {
+          "id": 19,
+          "type": "ACTIVE"
+        },
+        {
+          "id": 7,
+          "type": "INACTIVE"
+        },
+        {
+          "id": 14,
+          "type": "APPROVED"
+        },
+        {
+          "id": 52,
+          "type": "IN_CHECK"
+        },
+        {
+          "id": 72,
+          "type": "ADDED"
+        }
+      ],
+      "id": "hctaYPW"
+    },
+    {
+      "name": "djsnfkdsj",
+      "age": 34,
+      "job_title": "dssadasf",
+      "current_state": "INACTIVE",
+      "states": [
+        {
+          "id": 28,
+          "type": "ACTIVE"
+        },
+        {
+          "id": 14,
+          "type": "INACTIVE"
+        },
+        {
+          "id": 86,
+          "type": "APPROVED"
+        },
+        {
+          "id": 30,
+          "type": "IN_CHECK"
+        },
+        {
+          "id": 70,
+          "type": "ADDED"
+        }
+      ],
+      "id": "3Z5PGfV"
     }
   ]
 }

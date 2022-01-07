@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { notification, Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const API_BASE_URL = 'http://localhost:3000';
 
@@ -16,6 +17,7 @@ type IState = {
 };
 
 const Employees = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState<IState[]>([]);
   const [current, setCurrent] = useState<Array<number>>([]);
 
@@ -99,7 +101,9 @@ const Employees = () => {
   return (
     <Container>
       <h1>Employees Listing</h1>
-      <Button>Create Employee</Button>
+      <Button onClick={() => navigate('/employees/create')}>
+        Create Employee
+      </Button>
 
       <StyledTable
         rowKey='id'
@@ -129,6 +133,7 @@ export const Button = styled.button`
   height: 40px;
   border: 1px solid #000;
   border-radius: 4px;
+  cursor: pointer;
 `;
 
 export const StyledTable = styled(Table)`
