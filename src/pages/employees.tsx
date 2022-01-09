@@ -29,7 +29,7 @@ const Employees = () => {
       .catch((err) => {
         notification.error(err.response.data);
       });
-  }, []);
+  }, [current]);
 
   const handleOnClick = (
     element: { id: number; type: string },
@@ -46,8 +46,8 @@ const Employees = () => {
       .patch(`${API_BASE_URL}/employees/${recordId}`, {
         current_state: element.type,
       })
-      .then(() => {
-        window.location.reload();
+      .then((res) => {
+        setData([...data, res.data]);
       })
       .catch((err) => {
         notification.error(err.response.data);

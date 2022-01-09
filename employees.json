@@ -27,7 +27,7 @@
           "type": "ADDED"
         }
       ],
-      "current_state": "ACTIVE"
+      "current_state": "APPROVED"
     },
     {
       "id": "2",
@@ -56,7 +56,7 @@
           "type": "ADDED"
         }
       ],
-      "current_state": "IN_CHECK"
+      "current_state": "INACTIVE"
     },
     {
       "name": "aya",
@@ -91,7 +91,7 @@
       "name": "djsnfkdsj",
       "age": 34,
       "job_title": "dssadasf",
-      "current_state": "INACTIVE",
+      "current_state": "APPROVED",
       "states": [
         {
           "id": 28,
